@@ -21,7 +21,12 @@ public class RunnerFetch02 {
 		Session session = sf.openSession();
 
 		Transaction tx = session.beginTransaction();
+		
+		Student02 student= session.get(Student02.class, 1001);
 
+		System.out.println(student);
+		
+		System.out.println(student.getAddress());
 
 		tx.commit();
 
