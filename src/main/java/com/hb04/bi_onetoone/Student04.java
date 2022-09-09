@@ -15,17 +15,10 @@ public class Student04 {
 	private String name;
 
 	private int grade;
-
-	@OneToOne(mappedBy = "student")
+	
+	//eğer mappedBy kullanılmazsa her iki taraftada ilişki için bir sütun oluşur.
+	@OneToOne(mappedBy="student")
 	private Diary02 diary;
-
-	public Diary02 getDiary() {
-		return diary;
-	}
-
-	public void setDiary(Diary02 diary) {
-		this.diary = diary;
-	}
 
 	public int getId() {
 		return id;
@@ -50,10 +43,18 @@ public class Student04 {
 	public void setGrade(int grade) {
 		this.grade = grade;
 	}
+	
+	public Diary02 getDiary() {
+		return diary;
+	}
+
+	public void setDiary(Diary02 diary) {
+		this.diary = diary;
+	}
 
 	@Override
 	public String toString() {
-		return "Student04 [id=" + id + ", name=" + name + ", grade=" + grade + "]";
+		return "Student04 [id=" + id + ", name=" + name + ", grade=" + grade +"]";
 	}
 
 }

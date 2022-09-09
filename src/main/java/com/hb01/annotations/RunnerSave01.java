@@ -20,10 +20,18 @@ public class RunnerSave01 {
 		student2.setName("James Bond");
 		student2.setGrade(10);
 		
+		
 		Student01 student3 =new Student01();
 		student3.setId(1003);
-		student3.setName("Ali Ay");
-		student3.setGrade(10);
+		student3.setName("Tony Stark");
+		student3.setGrade(11);
+		
+		
+		Student01 student4 =new Student01();
+		student4.setId(1004);
+		student4.setName("Maximus Decimus");
+		student4.setGrade(11);
+		
 		
 		Configuration con = new     
                   Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Student01.class);
@@ -34,13 +42,17 @@ public class RunnerSave01 {
 
 		Transaction tx = session.beginTransaction();
 			
-		session.save(student1);
-		session.save(student2);
-		session.save(student3);
+//		session.save(student1);
+//		session.save(student2);
+//		session.save(student3);
+		
+		session.save(student4);
 		
 		tx.commit();
 
+		//Session close edilmeli, edilmezse connection açık kalır. 
 		session.close();
+		
 
 		sf.close();
 		

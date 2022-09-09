@@ -10,11 +10,11 @@ public class Diary {
 
 	@Id
 	private int id;
-
+	
 	private String name;
-
+	
 	@OneToOne
-	@JoinColumn(name = "std_id") // student_id
+	@JoinColumn(name="std_id") //student_id
 	private Student03 student;
 
 	public int getId() {
@@ -45,5 +45,5 @@ public class Diary {
 	public String toString() {
 		return "Diary [id=" + id + ", name=" + name + ", student=" + student + "]";
 	}
-
+	
 }
