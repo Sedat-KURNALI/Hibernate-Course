@@ -1,7 +1,5 @@
 package com.hb06.uni_onetomany;
 
-import java.awt.print.Book;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

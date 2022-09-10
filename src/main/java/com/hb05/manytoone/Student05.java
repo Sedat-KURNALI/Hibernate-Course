@@ -11,23 +11,40 @@ import javax.persistence.PrePersist;
 
 @Entity
 public class Student05 {
-	
+
 	@Id
 	private int id;
-	@Column(name="student_name",nullable = false)
+	@Column(name = "student_name", nullable = false)
 	private String name;
-	
+
 	private int grade;
-	
-	private LocalDateTime createOn;
-	
+
 	@ManyToOne
-	@JoinColumn(name="university_id")
+	@JoinColumn(name = "university_id")
 	private University university;
 	
+	
+	
+	
+	private String abcString="Merhaba"; 
+	
+	public String getAbcString() {
+		return abcString;
+	}
+
+	public void setAbcString(String abcString) {
+		this.abcString = abcString;
+	}
+
+	public void setCreateOn(LocalDateTime createOn) {
+		this.createOn = createOn;
+	}
+
+	private LocalDateTime createOn;
+
 	@PrePersist
 	public void prePersist() {
-		createOn=LocalDateTime.now();
+		createOn = LocalDateTime.now();
 	}
 
 	public int getId() {
@@ -68,10 +85,10 @@ public class Student05 {
 
 	@Override
 	public String toString() {
-		return "Student05 [id=" + id + ", name=" + name + ", grade=" + grade + ", createOn=" + createOn
-				+ ", university=" + university + "]";
+		return "Student05 [id=" + id + ", name=" + name + ", grade=" + grade + ", university=" + university
+				+ ", abcString=" + abcString + ", createOn=" + createOn + "]";
 	}
-	
+
 	
 
 }
