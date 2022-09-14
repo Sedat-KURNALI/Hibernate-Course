@@ -33,7 +33,7 @@ public class RunnerSave03 {
 		Diary diary2=new Diary();
 		diary2.setId(102);
 		diary2.setName("James's diary");
-		diary2.setStudent(student2); 
+		diary2.setStudent(student2);
 		
 		Configuration con=new Configuration().configure("hibernate.cfg.xml").
 				addAnnotatedClass(Student03.class).addAnnotatedClass(Diary.class);
